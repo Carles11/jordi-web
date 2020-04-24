@@ -1,0 +1,26 @@
+@import "../styles.scss";
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background-color: $primary-color;
+  color: $font-color-white;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 9rem;
+  opacity: 0.8;
+  &_item {
+    align-self: center;
+    width: 25%;
+    text-align: center;
+
+    &_navigation {
+      text-align: center;
+      padding: 20px;
+    }
+  }
+}
