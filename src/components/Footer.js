@@ -1,6 +1,6 @@
 import React from "react";
 
-import FooterTabs from "./FooterTabs.js";
+import FooterTabs from "./FooterTabs";
 
 import "./Footer.scss";
 

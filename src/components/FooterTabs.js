@@ -1,22 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { NavigationMenu } from "../configs/NavigationMenu";
+
 const FooterTabs = () => {
   return (
     <>
       <ul className="footer_item">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">Sobre mi</Link>
-        </li>
-        <li>
-          <Link to="/projects">Projectes</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
+        {NavigationMenu.map((item) => {
+          return (
+            <li key={item.key}>
+              <Link to={item.link}>{item.name}</Link>
+            </li>
+          );
+        })}
       </ul>
       <hr />
     </>

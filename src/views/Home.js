@@ -1,9 +1,11 @@
 import React from "react";
 
+import FlexPanel from "../components/flexPanel/FlexPanel";
+
 const Home = () => {
   return (
     <div>
-      <h2>Home</h2>
+      <FlexPanel />
     </div>
   );
 };

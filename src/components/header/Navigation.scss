@@ -1,11 +1,12 @@
-@import "../styles.scss";
+@import "../../styles.scss";
 
-.footer {
+.header {
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-shrink: 0;
-  background-color: $primary-color;
+  background-color: transparent;
   color: $font-color-white !important;
   text-decoration: none;
   position: relative;

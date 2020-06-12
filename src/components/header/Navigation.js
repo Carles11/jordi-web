@@ -1,25 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { NavigationMenu } from "../../configs/NavigationMenu";
+import "./Navigation.scss";
+
 const Navigation = () => {
   return (
-    <>
+    <div className="header">
       <ul>
-        <li className="footer_items_navigation">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="footer_items_navigation">
-          <Link to="/about">Sobre mi</Link>
-        </li>
-        <li className="footer_items_navigation">
-          <Link to="/projects">Projectes</Link>
-        </li>
-        <li className="footer_items_navigation">
-          <Link to="/contact">Contact</Link>
-        </li>
+        {NavigationMenu.map((tab) => {
+          return (
+            <li key={tab.key}>
+              <Link className="header_item_navigation" to={tab.link}>
+                {tab.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-      <hr />
-    </>
+    </div>
   );
 };
 
