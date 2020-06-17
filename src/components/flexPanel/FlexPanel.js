@@ -11,16 +11,22 @@ class FlexPanel extends Component {
       toggle3: false,
     };
   }
-  render() {
-    const toggleOpen = (e) => {
-      const id = e.currentTarget.id;
-      const toggleId = `toggle${id}`;
-      let toggleItem = this.state[toggleId];
-      this.setState({
-        [toggleId]: !toggleItem,
-      });
-    };
+  toggleOpen = (e) => {
+    const id = e.currentTarget.id;
+    const toggleId = `toggle${id}`;
+    let toggleItem = this.state[toggleId];
+    this.setState({
+      [toggleId]: !toggleItem,
+    });
+    this.toggleClose(toggleId);
+  };
 
+  toggleClose = (toggleId) => {
+    toggleId === "toggle1" && this.setState({ toggle2: false, toggle3: false });
+    toggleId === "toggle2" && this.setState({ toggle1: false, toggle3: false });
+    toggleId === "toggle3" && this.setState({ toggle1: false, toggle2: false });
+  };
+  render() {
     const { toggle1, toggle2, toggle3 } = this.state;
     console.log(toggle1);
     return (
@@ -29,7 +35,7 @@ class FlexPanel extends Component {
           id={1}
           className={`panel panel1 ${toggle1 ? "open open-active" : "closed"} `}
           onClick={(e) => {
-            toggleOpen(e);
+            this.toggleOpen(e);
           }}
         >
           <p>Consultas</p>
@@ -40,7 +46,7 @@ class FlexPanel extends Component {
           id={2}
           className={`panel panel2 ${toggle2 ? "open open-active" : "closed"} `}
           onClick={(e) => {
-            toggleOpen(e);
+            this.toggleOpen(e);
           }}
         >
           <p>Videoconsultas</p>
@@ -51,7 +57,7 @@ class FlexPanel extends Component {
           id={3}
           className={`panel panel3 ${toggle3 ? "open open-active" : "closed"} `}
           onClick={(e) => {
-            toggleOpen(e);
+            this.toggleOpen(e);
           }}
         >
           <p>Jordi</p>
