@@ -6,19 +6,15 @@ import "./Navigation.scss";
 
 const Navigation = () => {
   return (
-    <div className="header">
-      <ul>
-        {NavigationMenu.map((tab) => {
-          return (
-            <li key={tab.key}>
-              <Link className="header_item_navigation" to={tab.link}>
-                {tab.name}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <ul className="header">
+      {NavigationMenu.map((tab) => {
+        return (
+          <li className="header header_item" key={tab.key}>
+            <Link to={tab.link}>{tab.name.toUpperCase()}</Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

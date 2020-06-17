@@ -32,9 +32,9 @@ class FlexPanel extends Component {
             toggleOpen(e);
           }}
         >
-          <p>Consultes</p>
-          <p>Teràpies</p>
-          <p>Recolzament</p>
+          <p>Consultas</p>
+          <p>Terápias</p>
+          <p>Apoyo</p>
         </div>
         <div
           id={2}
@@ -43,9 +43,9 @@ class FlexPanel extends Component {
             toggleOpen(e);
           }}
         >
-          <p>Videoconsultes</p>
-          <p>en grup</p>
-          <p>i individuals</p>
+          <p>Videoconsultas</p>
+          <p>online</p>
+          <p>y individuales</p>
         </div>
         <div
           id={3}
@@ -56,7 +56,7 @@ class FlexPanel extends Component {
         >
           <p>Jordi</p>
           <p>Arjó</p>
-          <p>Teràpies</p>
+          <p>Terápias</p>
         </div>
       </div>
     );

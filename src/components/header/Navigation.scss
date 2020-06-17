@@ -1,28 +1,20 @@
 @import "../../styles.scss";
 
 .header {
-  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-shrink: 0;
-  background-color: transparent;
-  color: $font-color-white !important;
-  text-decoration: none;
   position: relative;
-  bottom: 0;
   width: 100%;
-  height: 9rem;
-  opacity: 0.8;
+  height: 4rem;
+  align-items: center;
 
   &_item {
-    align-self: center;
-    width: 25%;
-    text-align: center;
+    color: $font-color;
+    padding: 20px;
+  }
 
-    &_navigation {
-      text-align: left;
-      padding: 20px;
-    }
+  &_item:hover {
+    color: $link-hover-color;
   }
 }
