@@ -4,9 +4,9 @@ import FlexPanel from "../components/flexPanel/FlexPanel";
 
 const Home = () => {
   return (
-    <div>
+    <main className="nav-home">
       <FlexPanel />
-    </div>
+    </main>
   );
 };
 

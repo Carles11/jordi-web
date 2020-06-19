@@ -8,6 +8,7 @@ const Home = lazy(() => import("../views/Home"));
 const About = lazy(() => import("../views/About"));
 const Projects = lazy(() => import("../views/Projects"));
 const Contact = lazy(() => import("../views/Contact"));
+const VideoCall = lazy(() => import("../views/VideoCall"));
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -21,35 +22,29 @@ const Contact = lazy(() => import("../views/Contact"));
 export default function BasicExample() {
   return (
     <Router>
-      <div>
-        <Suspense fallback={<h1>Still Loading…</h1>}>
+      <Suspense fallback={<h1>Loading…</h1>}>
+        <div className="content">
           <Navigation />
-          {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}{" "}
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/projects">
-                <Projects />
-              </Route>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-            </Switch>
-          </div>
-          <Footer />
-        </Suspense>
-      </div>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/projects">
+              <Projects />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/video-call">
+              <VideoCall />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
+      </Suspense>
     </Router>
   );
 }

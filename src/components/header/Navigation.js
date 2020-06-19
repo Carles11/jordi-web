@@ -3,21 +3,29 @@ import { Link } from "react-router-dom";
 
 import { NavigationMenu } from "../../configs/NavigationMenu";
 import "./Navigation.scss";
-import logoJordi from "../../assets/logos/JordiLogo_200.png";
+import "../../index.css";
 
 const Navigation = () => {
   return (
-    <div className="header">
-      <img src={logoJordi} alt="logo Jordi Arjó Terápias Psicólogo" />
-      <ul className="header_nav">
-        {NavigationMenu.map((tab) => {
-          return (
-            <li className="header header_item" key={tab.key}>
-              <Link to={tab.link}>{tab.name.toUpperCase()}</Link>
-            </li>
-          );
-        })}
-      </ul>
+    <div>
+      <nav className="navbar">
+        <ul className="navbar-nav">
+          {NavigationMenu.map((tab) => {
+            return (
+              <li className="nav-item" key={tab.key}>
+                <Link className="nav-link" to={tab.link}>
+                  <img
+                    src={require(`../../assets/icons/png/${tab.icon}`)}
+                    alt={tab.alt}
+                    width={`${tab.name === "Home" ? "120%" : "75%"}`}
+                  />
+                  <span className="link-text">{tab.name.toUpperCase()}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </div>
   );
 };

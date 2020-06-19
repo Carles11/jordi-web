@@ -1,9 +1,9 @@
 import React from "react";
 
-const Contact = () => {
+const VideoCall = () => {
   return (
     <main>
-      <h2>Contacto</h2>
+      <h2>Video llamada</h2>
       <p>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -98,4 +98,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default VideoCall;
